@@ -5,6 +5,10 @@
 1) Make sure you have FastAPI installed. Otherwise do:
 ```pip install fastapi uvicorn```
 
-2) Next go to
+2) Launch
+```uvicorn main:app --reload```
+Hopefully it works.
+
+3) Next go to
 ```http://localhost:8000```
-And I hope it works. Whatever.
+Ta-dam! Enjoy.
