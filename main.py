@@ -3,6 +3,12 @@ from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from transformers import GPT2LMHeadModel, GPT2Tokenizer
+###############
+# Use a pipeline as a high-level helper
+from transformers import pipeline
+
+pipe = pipeline("text2text-generation", model="fekpghojezpoh/sarcasm_BARThez")
+###################
 
 app = FastAPI()
 
@@ -12,9 +18,17 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 templates = Jinja2Templates(directory="templates")
 
 # Load pre-trained GPT-2 model and tokenizer
-model_name = "gpt2"
-tokenizer = GPT2Tokenizer.from_pretrained(model_name)
-model = GPT2LMHeadModel.from_pretrained(model_name)
+#model_name = "gpt2"
+#tokenizer = GPT2Tokenizer.from_pretrained(model_name)
+#model = GPT2LMHeadModel.from_pretrained(model_name)
+
+############################
+# Load model directly
+from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
+
+tokenizer = AutoTokenizer.from_pretrained("fekpghojezpoh/sarcasm_BARThez")
+model = AutoModelForSeq2SeqLM.from_pretrained("fekpghojezpoh/sarcasm_BARThez")
+############################################
 
 @app.get("/", response_class=HTMLResponse)
 async def home(request: Request):
