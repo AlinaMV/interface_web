@@ -3,11 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FastAPI Interface</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Text Generation</title>
+    <link rel="stylesheet" href="/static/styles.css">
 </head>
 <body>
-    <h1>FastAPI Interface</h1>
-    <p>Welcome to the FastAPI Interface!</p>
+    <h1>Text Generation</h1>
+    <form action="/generate_text" method="post">
+        <label for="input_text">Input Text:</label><br>
+        <textarea id="input_text" name="input_text" rows="4" cols="50"></textarea><br>
+        <input type="submit" value="Generate Text">
+    </form>
 </body>
 </html>

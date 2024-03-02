@@ -1,9 +1,14 @@
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, Request, Form
 from fastapi.responses import HTMLResponse
+from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from transformers import GPT2LMHeadModel, GPT2Tokenizer
 
 app = FastAPI()
+
+# Mount the "static" directory to serve static files (CSS, JS, images, etc.)
+app.mount("/static", StaticFiles(directory="static"), name="static")
+
 templates = Jinja2Templates(directory="templates")
 
 # Load pre-trained GPT-2 model and tokenizer
@@ -16,7 +21,7 @@ async def home(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
 
 @app.post("/generate_text", response_class=HTMLResponse)
-async def generate_text(request: Request, input_text: str):
+async def generate_text(request: Request, input_text: str = Form(...)):
     # Tokenize input text
     input_ids = tokenizer.encode(input_text, return_tensors="pt")
     # Generate text using the model
