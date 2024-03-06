@@ -87,10 +87,11 @@
 					<h2>Text generation</h2>
 					<p>This is the best satirical text generation ever :)</p>
 					<form action="/generate_text" method="post">
-        					<label for="input_text">Input text:</label><br>
-        					<textarea id="input_text" name="input_text" rows="4" cols="50"></textarea><br>
-        					<input type="submit" class="btn btn-primary btn-lg btn-learn" type="submit" value="Generate in english"> <input type="submit" class="btn btn-primary btn-lg btn-learn" type="submit" value="Générez en français">
-    					</form>
+						<label for="input_text">Input text:</label><br>
+						<textarea id="input_text" name="input_text" rows="4" cols="50"></textarea><br>
+						<input type="submit" class="btn btn-primary btn-lg btn-learn" name="language" value="Generate in English">
+						<input type="submit" class="btn btn-primary btn-lg btn-learn" name="language" value="Générez en français">
+					</form>					
 				</div>
 			</div>
 		</div>
