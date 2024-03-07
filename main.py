@@ -10,7 +10,7 @@ app = FastAPI()
 # Mount static files directory for serving CSS, JS, etc.
 app.mount("/static", StaticFiles(directory="static"), name="static")
 # Load Jinja2 templates for generating dynamic HTML content
-templates = Jinja2Templates(directory="templates")
+templates = Jinja2Templates(directory="docs")
 
 # Load English model
 english_tokenizer = AutoTokenizer.from_pretrained("fekpghojezpoh/sarcasm_BART_v2")
