@@ -17,7 +17,7 @@ english_model = AutoModelForSeq2SeqLM.from_pretrained("fekpghojezpoh/sarcasm_BAR
 french_tokenizer = AutoTokenizer.from_pretrained("fekpghojezpoh/sarcasm_BARThez_v3")
 french_model = AutoModelForSeq2SeqLM.from_pretrained("fekpghojezpoh/sarcasm_BARThez_v3")
 
-@app.get("/", response_class=HTMLResponse)
+@app.get("/home", response_class=HTMLResponse)
 async def home(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
 
