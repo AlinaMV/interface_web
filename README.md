@@ -42,7 +42,7 @@ En ce qui concerne les fonctionnalités de ces modèles, nous les avons utilisé
 
 ## Les résultats
 
-Pour le modèle Barthez déposé sur le site HuggingFace [ici](fekpghojezpoh/sarcasm_BARThez_v3), nous avons obtenu un loss de 0.5079 qui a commencé à augmenter avec l'entraînement. Pour le modèle Bart déposé [ici](https://huggingface.co/fekpghojezpoh/sarcasm_BART_v2), nous avons pu l'entraîner plus rapidement avec une efficacité plus significative même avec un loss plus élevé.
+Pour le modèle Barthez déposé sur le site HuggingFace [ici](https://huggingface.co/fekpghojezpoh/sarcasm_BARThez_v3), nous avons obtenu un loss de 0.5079 qui a commencé à augmenter avec l'entraînement. Pour le modèle Bart déposé [ici](https://huggingface.co/fekpghojezpoh/sarcasm_BART_v2), nous avons pu l'entraîner plus rapidement avec une efficacité plus significative même avec un loss plus élevé.
 
 Vous pouvez trouver les cahiers Jupyter dans le dossier ./code
  
